@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 
 /* Você deverá implementar um programa com um pequeno menu, contabilizar o tempo médio
 de execução para diferentes entradas, construir um gráfico a partir disso, e contabilizar
@@ -26,29 +28,6 @@ int leOpcao(){
     return n;
 }
 
-void chamaAlgoritmo(int option, int *vetor, int n){
-    switch (option)
-    {
-    case 1:
-        inverteOrdem(vetor, n);
-        break;
-    case 2:
-        inverteOrdem(vetor, n);
-        break;
-    case 3:
-        inverteOrdem(vetor, n);
-        break;
-    case 4:
-        inverteOrdem(vetor, n);
-        break;
-    case 5:
-        break;
-    default:
-        printf("Opcao Inválida!\n");
-        break;
-    }
-}
-
 // Opcao 1: Inversão da ordem do vetor de entrada.
     void inverteOrdem(int *vetor, int n){
 
@@ -71,6 +50,32 @@ void chamaAlgoritmo(int option, int *vetor, int n){
     void buscaBinRecursiva(int *vetor, int n){
 
     }
+
+
+void chamaAlgoritmo(int option, int *vetor, int n){
+    switch (option)
+    {
+    case 1:
+        inverteOrdem(vetor, n);
+        break;
+    case 2:
+        buscaSequencial(vetor, n);
+        break;
+    case 3:
+        buscaBinIterativa(vetor, n);
+        break;
+    case 4:
+        buscaBinRecursiva(vetor, n);
+        break;
+    case 5:
+        break;
+    default:
+        printf("Opcao Inválida!\n");
+        break;
+    }
+}
+
+
 
 
 
