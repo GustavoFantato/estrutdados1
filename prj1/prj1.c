@@ -67,12 +67,40 @@ int leOpcao(){
 
 
 // Opcao 3: Busca Binária Iterativa no vetor de entrada.
-    void buscaBinIterativa(int *vetor, int n){
+    void buscaBinIterativa(int *vetor, int n, int x){
+        int inicio = 0, fim = n;
+
+        while (inicio <= fim){
+            int meio = (inicio+fim) / 2; // acha o meio do vetor
+
+            if(vetor[meio] == x){printf("SIM\n"); return;} // Elemento encontrado, retorna
+
+            if(vetor[meio] < x){ // Se o elemento do vetor do meio for menor que o elemento desejado, o x estará na parte direita do vetor. Assim, desconsideramos o restante do vetor 
+                inicio = meio + 1;
+            } else { // Se for maior que x, ele estará na parte esquerda do vetor 
+                fim = meio - 1; 
+            }
+        }
+
+        printf("NAO\n");
     }
 
 
 // Opcao 4: Busca Binária Recursiva no vetor de entrada
-     void buscaBinRecursiva(int *vetor, int i, int x){
+     void buscaBinRecursiva(int *vetor, int inicio, int fim, int x){
+        int meio = (inicio + fim) / 2; // Declara e calcula o meio
+
+        if(vetor[meio] == x){printf("SIM\n"); return;} // Caso base: elemento encontrado. Retorna
+        if(inicio > fim){printf("NAO\n"); return;} // Caso base: já chegou na ultima divisao binaria e  elemento nao encontrado. Retorna
+
+        if(vetor[meio] < x){
+            buscaBinRecursiva(vetor, meio+1, fim, x);
+        }
+
+        if(vetor[meio] > x){
+            buscaBinRecursiva(vetor, inicio, meio-1, x);
+        }
+
     }
 
 void chamaAlgoritmo(int option, int *vetor, int n){
@@ -85,12 +113,14 @@ void chamaAlgoritmo(int option, int *vetor, int n){
         buscaSequencial(vetor, n);
         break;
     case 3:
-        buscaBinIterativa(vetor, n);
+        int x;
+        scanf("%d", &x);
+        buscaBinIterativa(vetor, n-1, x);
         break;
     case 4:
-        int x ;
-        scanf("%d", &x);
-        buscaBinRecursiva(vetor, n-1, x);
+        int y ;
+        scanf("%d", &y);
+        buscaBinRecursiva(vetor, 0, n-1, y);
         break;
     case 5:
         break;
