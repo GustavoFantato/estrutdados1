@@ -1,7 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Você deverá implementar um programa com um pequeno menu, contabilizar o tempo médio
+/*Grupo 11: 
+
+Victor Kayky Zaneti Antunes NUSP : 15491132
+Gustavo Fantato Fernandes NUSP : 16986132
+Felipe Galvão Prazeres NUSP: 16828948
+
+Você deverá implementar um programa com um pequeno menu, contabilizar o tempo médio
 de execução para diferentes entradas, construir um gráfico a partir disso, e contabilizar
 suas operações (comparação e atribuição).
 O programa deverá implementar:
