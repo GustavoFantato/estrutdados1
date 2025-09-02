@@ -6,7 +6,6 @@
 Victor Kayky Zaneti Antunes NUSP : 15491132
 Gustavo Fantato Fernandes NUSP : 16986132
 Felipe Galvão Prazeres NUSP: 16828948
-
 Você deverá implementar um programa com um pequeno menu, contabilizar o tempo médio
 de execução para diferentes entradas, construir um gráfico a partir disso, e contabilizar
 suas operações (comparação e atribuição).
@@ -43,16 +42,25 @@ int leOpcao(){
 
 // Opcao 1: Inversão da ordem do vetor de entrada.
     void inverteOrdem(int *vetor, int n){
+
+        int *vetorTemp = malloc(n * sizeof(int)); // Cria um Vetor temporário.
+
+        // For para copiar o vetor original para um vetor temporário.
+        for(int i = 0; i < n ; i++){
+            vetorTemp[i] = vetor[i];
+        }
+
         int contagem; //Contagem dos passos
         int j = n-1; // Índice auxiliar para contar de trás pra frente no vetor
         int aux;
         for (int i = 0; i < n/2; i++){
-            aux = vetor[j];
-            vetor[j] = vetor[i];
-            vetor[i] = aux;
+            aux = vetorTemp[j];
+            vetorTemp[j] = vetorTemp[i];
+            vetorTemp[i] = aux;
             j--;
         }
-        // printaVetor(vetor, n); 
+        printaVetor(vetorTemp, n); 
+        free(vetorTemp);
         // printf("%d", contagem);
 }
 
@@ -94,10 +102,12 @@ int leOpcao(){
 
 // Opcao 4: Busca Binária Recursiva no vetor de entrada
      void buscaBinRecursiva(int *vetor, int inicio, int fim, int x){
+
+        if(inicio > fim){printf("NAO\n"); return;} // Caso base: já chegou na ultima divisao binaria e  elemento nao encontrado. Retorna
+        
         int meio = (inicio + fim) / 2; // Declara e calcula o meio
 
         if(vetor[meio] == x){printf("SIM\n"); return;} // Caso base: elemento encontrado. Retorna
-        if(inicio > fim){printf("NAO\n"); return;} // Caso base: já chegou na ultima divisao binaria e  elemento nao encontrado. Retorna
 
         if(vetor[meio] < x){
             buscaBinRecursiva(vetor, meio+1, fim, x);
@@ -161,6 +171,6 @@ do {
 
 } while(option != 5);
 
-
+    free(vetor);
     return 0;
 }

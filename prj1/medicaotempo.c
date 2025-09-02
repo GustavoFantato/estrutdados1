@@ -39,17 +39,26 @@ int leOpcao(){
 
 // Opcao 1: Inversão da ordem do vetor de entrada.
     void inverteOrdem(int *vetor, int n){
+
+        int *vetorTemp = malloc(n * sizeof(int)); // Cria um vetor temporário.
+
+        // For para copiar o vetor original para um vetor temporário.
+        for(int i = 0; i < n ; i++){
+            vetorTemp[i] = vetor[i];
+        }
+
         int contagem; //Contagem dos passos
         int j = n-1; // Índice auxiliar para contar de trás pra frente no vetor
         int aux;
         for (int i = 0; i < n/2; i++){
-            aux = vetor[j];
-            vetor[j] = vetor[i];
-            vetor[i] = aux;
+            aux = vetorTemp[j];
+            vetorTemp[j] = vetorTemp[i];
+            vetorTemp[i] = aux;
             j--;
         }
-        // printaVetor(vetor, n); 
-        // printf("%d", contagem);
+
+        //printaVetor(vetorTemp, n); 
+        free(vetorTemp);
 }
 
 
