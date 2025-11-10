@@ -1,2 +1,16 @@
-#include <stdio.h>
-#include "linkedlist.h"
+#include "BigInt.h"
+
+/* 
+ GRUPO:
+    - NOME: GUSTAVO FANTATO FERNANDES
+    - NUSP: 16986132
+
+   - NOME: FELIPE GALVAO PRAZERES
+   - NUSP: 16828948
+
+    - NOME: VICTOR KAYKY ZANETI ANTUNES
+    - NUSP: 15491132
+
+*/
+
+
