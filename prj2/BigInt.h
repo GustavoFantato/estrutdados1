@@ -5,8 +5,12 @@
 #define POS '+'
 #define NEG '-'
 
-typedef struct BigInt BigInt;
-typedef struct node Node;
+typedef struct BigInt{ 
+	int size; // quantidade de blocos (cada bloco com 2 dígitos)
+	Node *inicio; // node menos significativo
+	Node *final; // node mais significativo 
+	char sinal; // positivo (POS) ou negativo (NEG)
+}BigInt;
 
 BigInt *create(int digitos); // Cria um BigInt com capacidade 'digitos'
 
@@ -23,9 +27,6 @@ bool igual(const BigInt *a, const BigInt *b); // Compara se igual, retorna true 
 void destruir(BigInt **n); // Desalocar o BigInt
 
 void printBigInt(const BigInt *n); // Printar o BigInt
-
-
-
 
 
 #endif // BIGINT_H

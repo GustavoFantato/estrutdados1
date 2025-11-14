@@ -1,31 +1,16 @@
-#ifndef BIGINT_H
-#define BIGINT_H
-#include <stdbool.h>
+#ifndef LISTAENCAD_H
+#define LISTAENCAD_H
+#include "BigInt.h"
 
-#define POS '+'
-#define NEG '-'
-
-typedef struct BigInt BigInt;
 typedef struct node Node;
 
-BigInt *create(int digitos); // Cria um BigInt com capacidade 'digitos'
+Node* createNode(int d0, int d1);
 
-int definir(BigInt *n, const char *decimal); // Define o valor do BigInt a partir de uma string decimal. Retorna 1 se sucesso, 0 se falhar
+int addNodeEnd(BigInt *n, int d0, int d1); // Adiciona um node no fim do BigInt
 
-BigInt *soma(const BigInt *a, const BigInt *b); // Soma dois BigInts (novo BigInt) e retorna esse novo BigInt
+int removeNodeEnd(BigInt *n); // Remove o ultimo node do BigInt
 
-bool maior(const BigInt *a, const BigInt *b); // Compara se maior, retorna true ou false
-
-bool menor(const BigInt *a, const BigInt *b); // Compara se menor, retorna true ou false
-
-bool igual(const BigInt *a, const BigInt *b); // Compara se igual, retorna true ou false
-
-void destruir(BigInt **n); // Desalocar o BigInt
-
-void printBigInt(const BigInt *n); // Printar o BigInt
+int addNodeStart(BigInt *n, int d0, int d1); // Adiciona um node no inicio do BigInt -- Usado para parsing e soma
 
 
-
-
-
-#endif // BIGINT_H
+#endif 
