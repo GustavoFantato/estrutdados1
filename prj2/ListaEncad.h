@@ -4,7 +4,7 @@
 
 typedef struct node Node;
 
-Node* createNode(int d0, int d1);
+Node* createNode(int d0, int d1, Node *next, Node *prev);
 
 int addNodeEnd(BigInt *n, int d0, int d1); // Adiciona um node no fim do BigInt
 
