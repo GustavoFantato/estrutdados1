@@ -20,8 +20,11 @@ return 0: operacao nao finalizada. ERRO
 
 true e false (bool) para funcoes de maiores e menores
 
+ARQUIVOS:
 
+ListaEncad.c e ListaEncad.h --> Funcoes voltadas para as funcionalidades da lista encadeada
 
+BigInt.c e BigInt.h --> Funcoes voltadas para as funcionalidades e operacoes do BigInt
 
 */
 
