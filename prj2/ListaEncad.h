@@ -1,8 +1,16 @@
 #ifndef LISTAENCAD_H
 #define LISTAENCAD_H
-#include "BigInt.h"
 
+
+typedef struct BigInt BigInt;
 typedef struct node Node;
+
+struct node{
+	int d0; // Digito menos significativo
+	int d1; // Digito mais significativo (do bloco)
+	Node *next; // next node da lista
+	Node *prev; // node anterior da lista
+};
 
 Node* createNode(int d0, int d1, Node *next, Node *prev);
 

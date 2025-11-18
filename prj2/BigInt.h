@@ -1,6 +1,7 @@
 #ifndef BIGINT_H
 #define BIGINT_H
 #include <stdbool.h>
+#include "ListaEncad.h"
 
 #define POS '+'
 #define NEG '-'

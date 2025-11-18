@@ -4,13 +4,6 @@
 #include "ListaEncad.h"
 #include "BigInt.h"
 
-struct node{
-	int d0; // Digito menos significativo
-	int d1; // Digito mais significativo (do bloco)
-	Node *next; // next node da lista
-	Node *prev; // node anterior da lista
-};
-
 Node* createNode(int d0, int d1, Node *next, Node *prev) {
 
     Node* newNode = malloc(sizeof(Node)); // aloca espaco pro node
