@@ -13,7 +13,7 @@ typedef struct BigInt{
     char sinal;      // positivo (POS) ou negativo (NEG)
 } BigInt;
 
-BigInt *create(int digitos); 
+BigInt *create(); 
 void destruir(BigInt **n); 
 
 int definir(BigInt *n, const char *decimal);

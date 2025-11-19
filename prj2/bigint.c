@@ -3,13 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 
 
 // Criacao e destruicao
 
-BigInt *create(int digitos) { // cria o BigInt e inicializa campos
-    BigInt *bi = malloc(sizeof(BigInt));
+BigInt *create() { // cria o BigInt e inicializa campos
+    BigInt *bi = malloc(sizeof(BigInt)); // bi = bigint
     if (!bi) return NULL;
 
     bi->inicio = NULL; // lista vazia
@@ -23,12 +22,12 @@ BigInt *create(int digitos) { // cria o BigInt e inicializa campos
 void destruir(BigInt **n) { // libera todos os nodes e a struct
     if (!n || !(*n)) return;
 
-    BigInt *ptr = *n;
+    BigInt *temp = *n;
 
-    while (ptr->size > 0)
-        removeNodeEnd(ptr); // removendo bloco por bloco
+    while (temp->size > 0)
+        removeNodeEnd(temp); // removendo bloco por bloco
 
-    free(ptr);  // libera struct
+    free(temp);  // libera struct
     *n = NULL;  // evita ponteiro solto
 }
 
@@ -107,6 +106,7 @@ void printBigInt(const BigInt *n) { // imprime o BigInt
 
         atual = atual->prev; // vai pro menos significativo
     }
+    printf("\n");
 }
 
 

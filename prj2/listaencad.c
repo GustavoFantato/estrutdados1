@@ -86,7 +86,7 @@ int removeNodeEnd(BigInt *n){  // Remove o ultimo node do BigInt
     n->size--;
 
     return 1;
-};
+}
 
 int addNodeStart(BigInt *n, int d0, int d1){ // Adiciona um node no inicio do BigInt -- Usado para parsing e soma
 
