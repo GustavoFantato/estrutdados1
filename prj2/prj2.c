@@ -18,7 +18,8 @@
 
   CONVENCAO DE RETURNS:
     return 1 --> sucesso!
-    return 0 --> erro!
+    return 0 --> nao foi realizado com sucesso
+    return -1 --> erro! (ponteiros nao inicializados, etc)
 
 */
 
@@ -60,7 +61,7 @@ int main() {
                 destruir(&A);
                 destruir(&B);
 
-                return 0;
+                return -1;
             }
 
             printf("Resultado :: ");
@@ -76,9 +77,9 @@ int main() {
             printf("Resultado :: ");
 
             if(maior(A,B) == false){
-                printf("False\n");
+                printf("False");
             } else{
-                printf("True\n");
+                printf("True");
             }
         }
 
@@ -88,9 +89,9 @@ int main() {
             printf("Resultado :: ");
 
             if(menor(A,B) == false){
-                printf("False\n");
+                printf("False");
             } else{
-                printf("True\n");
+                printf("True");
             }
         }
 
@@ -100,21 +101,20 @@ int main() {
             printf("Resultado :: ");
 
             if(igual(A,B) == false){
-                printf("False\n");
+                printf("False");
             } else{
-                printf("True\n");
+                printf("True");
             }
         }
 
         //n = 0; // --> debug
 
-
-        
+        printf("\n");
         n--; // decrementa para que o loop quebre ao atingir a qtd certa de operacoes
     }
 
     destruir(&A);
     destruir(&B);
 
-    return 1;
+    return 0;
 }

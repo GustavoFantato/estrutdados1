@@ -24,13 +24,13 @@ Node* createNode(int d0, int d1, Node *next, Node *prev) {
 int addNodeEnd(BigInt *n, int d0, int d1){ // Adiciona um node no fim do BigInt
 
     if(!n){
-        return 0;
+        return -1;
     }
 
     Node* newNode = createNode(d0, d1, NULL, n->final); // cria o novo Node 
 
     if(!newNode){
-        return 0; // falha ao criar o novo Node
+        return -1; // falha ao criar o novo Node
     }
 
     // Caso 1: Lista vazia
@@ -58,7 +58,7 @@ int addNodeEnd(BigInt *n, int d0, int d1){ // Adiciona um node no fim do BigInt
 int removeNodeEnd(BigInt *n){  // Remove o ultimo node do BigInt
 
     if(!n){
-        return 0;
+        return -1;
     }   
 
     // Caso 1: Lista vazia
@@ -91,11 +91,11 @@ int removeNodeEnd(BigInt *n){  // Remove o ultimo node do BigInt
 int addNodeStart(BigInt *n, int d0, int d1){ // Adiciona um node no inicio do BigInt -- Usado para parsing e soma
 
     if(!n){
-        return 0; 
+        return -1; 
     }
 
     Node *newNode = createNode(d0, d1, NULL, NULL); // cria o novo node e atribui d0 e d1
-    if (!newNode) return 0;
+    if (!newNode) return -1;
 
     // Caso 1: lista vazia  (inicio = NULL quer dizer lista vazia)
     if(n->inicio == NULL){

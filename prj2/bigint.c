@@ -35,7 +35,7 @@ void destruir(BigInt **n) { // libera todos os nodes e a struct
 // Parsing (string pra BigInt)
 
 int definir(BigInt *n, const char *decimal) { // converte string pra BigInt
-    if (!n || !decimal) return 0;
+    if (!n || !decimal) return -1;
 
     // limpa antes
     while (n->size > 0)
@@ -106,7 +106,6 @@ void printBigInt(const BigInt *n) { // imprime o BigInt
 
         atual = atual->prev; // vai pro menos significativo
     }
-    printf("\n");
 }
 
 
